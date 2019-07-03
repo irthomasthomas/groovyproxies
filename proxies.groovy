@@ -11,14 +11,15 @@ proxyfile.splitEachLine(" ") {proxies ->
     catch(Exception e) {println e}
 }
 proxylist = proxylist.unique()
+
 println "Downloaded "+proxylist.size() + " proxies"
 println "Now testing..." 
 
 goodproxies = []
 Random rnd = new Random()
 starttime = System.currentTimeMillis()
-
-GParsPool.withPool(proxylist.size()) {proxylist.eachParallel { proxies ->
+pool = 4
+GParsPool.withPool( proxylist.size() ) { proxylist.eachParallel { proxies ->
     try {
         port = proxies[1].toInteger()
         addr = proxies[0]
@@ -30,7 +31,7 @@ GParsPool.withPool(proxylist.size()) {proxylist.eachParallel { proxies ->
 
         URLConnection con = testurl.openConnection(proxy) // 1500ms
         con.setFollowRedirects(false)
-        con.setConnectTimeout(1000) 
+        con.setConnectTimeout(3000) 
         con.setReadTimeout(5000)        
         con.connect()
         goodproxies.add(proxies)
@@ -46,6 +47,9 @@ File lstFile = new File("goodproxies.txt")
 lstFile.withWriter{ out ->
   goodproxies.each {out.println it }
   }
+
+def json = groovy.json.JsonOutput.toJson(goodproxies)
+new File("goodproxies.json").write(json)
 
 time = new Date()
 result = (time.format("yyyy-MM-dd HH:mm:ss ") + " found " + goodproxies.size() + " good proxies in " + (endtime-starttime)/1000 + " s")
