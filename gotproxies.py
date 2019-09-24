@@ -10,7 +10,7 @@ def check_proxy(proxy):
         'http': proxy,
         'https': proxy
     }
-    url = 'https://api.ipify.org'  
+    url = 'https://instagram.com'  
     # if random.randint(1, 2) == 1: url = 'https://api.ipify.org'    
     # else: url = 'https://www.w3.org'
     

@@ -41,20 +41,21 @@ println "parse time: " + (parsetime/1000)+" seconds"
 
 goodproxies = []
 
-GParsPool.withPool( proxylist.size() ) { proxylist.eachParallel
+GParsPool.withPool( 400 ) { proxylist.eachParallel
     { proxies ->
         try {
+            // Thread.sleep(0)
                 port = proxies[1].toInteger()
                 addr = proxies[0]
                 SocketAddress proxyAddr = new InetSocketAddress(addr, port)
                 Proxy proxy = new Proxy(Proxy.Type.HTTP, proxyAddr)
-                URL url1 = new URL("https://api.ipify.org")
+                URL url1 = new URL("https://www.instagram.com")
                 // def urls = ["https://icanhazip.com","https://ifconfig.co","https://ifconfig.me","https://api.ipify.org"]
                 // URL testurl = new URL(urls[rnd.nextInt(urls.size)])
 
                 URLConnection conn = url1.openConnection(proxy)
-                conn.setConnectTimeout(3000)
-                conn.setReadTimeout(3000)
+                conn.setConnectTimeout(2000)
+                conn.setReadTimeout(2000)
                 conn.followRedirects = false
                 response = conn.getContent().text 
                 // conn.connect()
@@ -62,7 +63,8 @@ GParsPool.withPool( proxylist.size() ) { proxylist.eachParallel
                 // println "GOOD PROXY"
             }
         catch(Exception e) { 
-            println e
+            return
+            // println e
           }
     }
     }

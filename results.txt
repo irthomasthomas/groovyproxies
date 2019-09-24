@@ -1,25 +1,2 @@
-2019-07-03 12:49:14  found 148 good proxies in 494.384 s
-2019-07-03 12:52:43  found 132 good proxies in 68.322 s
-2019-07-03 12:54:24  found 132 good proxies in 79.705 s
-2019-07-03 12:55:25  found 144 good proxies in 42.039 s
-2019-07-03 13:03:52  found 129 good proxies in 18.504 s
-2019-07-03 13:04:15  found 65 good proxies in 15.563 s
-2019-07-03 13:05:09  found 110 good proxies in 18.52 s
-2019-07-03 13:05:59  found 147 good proxies in 33.542 s
-2019-07-03 13:06:36  found 139 good proxies in 30.2 s
-2019-07-03 13:07:13  found 131 good proxies in 28.937 s
-2019-07-03 13:07:46  found 149 good proxies in 27.391 s
-2019-07-03 13:08:41  found 127 good proxies in 34.65 s
-2019-07-03 13:09:08  found 112 good proxies in 19.096 s
-2019-07-03 13:18:04  found 153 good proxies in 521.722 s
-2019-07-03 13:24:23  found 155 good proxies in 457.72 s
-2019-07-03 13:30:33  found 127 good proxies in 16.48 s
-2019-07-03 13:31:04  found 171 good proxies in 393.407 s
-2019-07-03 15:41:27  found 117 good proxies in 17.374 s
-2019-07-03 16:14:19  found 93 good proxies in 13.782 s
-2019-07-03 16:14:44  found 99 good proxies in 16.263 s
-2019-07-03 16:15:08  found 115 good proxies in 12.594 s
-2019-07-03 16:15:45  found 149 good proxies in 15.703 s
-2019-07-03 16:16:46  found 215 good proxies in 16.338 s
-2019-07-03 16:17:11  found 167 good proxies in 16.515 s
-2019-07-03 16:17:37  found 169 good proxies in 19.03 s
+PYTHON(REQUESTS): 2019-09-21 11:19:38.493890 Tested 3172 Found: 843 good proxies in 0:00:23.041348
+GROOVY: 2019-09-21 11:30:55 Tested: 3316 found 761 good proxies in 50.706 s
